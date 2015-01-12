@@ -41,16 +41,16 @@ mod 'yguenane/ygrpms', '0.1.0'
 
 # Modules from Github
 mod 'role',
-  :git => 'git@github.com:puppetinabox/role'
+  :git => 'git@github.com:rnelson0/role'
 
 mod 'profile',
-  :git => 'git@github.com:puppetinabox/profile'
+  :git => 'git@github.com:rnelson0/profile'
 
 mod 'custom_facts',
-  :git => 'git@github.com:puppetinabox/custom_facts'
+  :git => 'git@github.com:rnelson/custom_facts'
 
 mod 'lab_config',
-  :git => 'git@github.com:puppetinabox/lab_config.git'
+  :git => 'git@github.com:rnelson/lab_config.git'
 
 mod 'linuxfw',
-  :git => 'git@github.com:puppetinabox/linuxfw'
+  :git => 'git@github.com:rnelson/linuxfw-1'
