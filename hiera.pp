@@ -1,3 +1,7 @@
+Package {
+  allow_virtual => true,
+}
+
 file {'/etc/puppet/hiera':
   ensure => directory,
 }
@@ -8,5 +12,5 @@ class {'hiera':
     '%{environment}',
     'global',
   ],
-  datadir => '/etc/puppet/hiera/data/',
+  datadir   => '/etc/puppet/hiera/data/',
 }
