@@ -1,14 +1,18 @@
+Package {
+  allow_virtual => true,
+}
+
 class { 'r10k':
-  version => '1.4.0',
-  sources => {
+  version           => '1.4.0',
+  sources           => {
     'puppet' => {
       'remote'  => 'git@github.com:puppetinabox/controlrepo.git',
       'basedir' => "${::settings::confdir}/environments",
       'prefix'  => false,
     },
-    'hiera' => {
+    'hiera'  => {
       'remote'  => 'git@github.com:puppetinabox/hiera.git',
-      'basedir' => "/etc/puppet/hiera",
+      'basedir' => '/etc/puppet/hiera',
       'prefix'  => false,
     }
   },
