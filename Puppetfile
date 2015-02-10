@@ -51,10 +51,10 @@ mod 'profile',
   :git => 'git@github.com:rnelson0/profile'
 
 mod 'custom_facts',
-  :git => 'git@github.com:rnelson/custom_facts'
+  :git => 'git@github.com:rnelson0/custom_facts'
 
 mod 'lab_config',
-  :git => 'git@github.com:rnelson/lab_config.git'
+  :git => 'git@github.com:rnelson0/lab_config.git'
 
 mod 'linuxfw',
-  :git => 'git@github.com:rnelson/linuxfw-1'
+  :git => 'git@github.com:rnelson0/linuxfw-1'
