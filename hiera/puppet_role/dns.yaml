@@ -5,14 +5,14 @@ bind_server_confs:
   '/etc/named.conf':
     listen_on_addr:
       - '127.0.0.1'
-      - '10.0.0.253'
+      - '10.0.1.253'
     allow_query:
       - 'localhost'
-      - '10.0.0.0/24'
+      - '10.0.1.0/24'
     zones:
-      0.0.10.in-addr.arpa:
+      1.0.10.in-addr.arpa:
         - 'type master'
-        - 'file "named.0.0.10"'
+        - 'file "named.1.0.10"'
         - 'allow-update { none; }'
       example.com:
         - 'type master'
@@ -21,5 +21,5 @@ bind_server_confs:
 bind_server_files:
   'named.example.com':
     source: 'puppet:///modules/lab_config/dns/example.com'
-  'named.0.0.10':
-    source: 'puppet:///modules/lab_config/dns/0.0.10'
+  'named.1.0.10':
+    source: 'puppet:///modules/lab_config/dns/1.0.10'

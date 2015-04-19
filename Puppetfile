@@ -45,4 +45,4 @@ mod 'yguenane/ygrpms', '0.1.0'
 
 # Modules from Github
 mod 'lab_config',
-  :git => 'git@github.com:puppetinabox/lab_config.git'
+  :git => 'git@github.com:rnelson0/lab_config.git'
