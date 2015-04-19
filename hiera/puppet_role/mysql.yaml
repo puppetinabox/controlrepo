@@ -1,0 +1,62 @@
+---
+classes:
+  role::mysql_server
+mysql::server::root_password    : 'password'
+mysql::server::restart          : 'true'
+mysql::server::backup::backupuser        : 'dbbackup'
+mysql::server::backup::backuppassword    : 'password'
+mysql::server::backup::backupdir         : '/data/mysql/backups'
+mysql::server::backup::backupcompress    : 'true'
+mysql::server::backup::backuprotate      : 90
+mysql::server::backup::file_per_database : 'true'
+mysql::server::backup::time              : ['03', '00']
+mysql::server::override_options :
+  'client':
+    socket                   : '/data/mysql/mysql.sock'
+  'mysqld':
+    bind-address             : '0.0.0.0'
+    log-bin                  : '/data/mysql/replog/mysql-bin.log'
+    log_bin_index            : '/data/mysql/replog/mysql-bin.log.index'
+    relay-log                : '/data/mysql/replog/slave-relay.log'
+    relay-log-index          : '/data/mysql/replog/slave-relay-log.index'
+    socket                   : '/data/mysql/mysql.sock'
+    datadir                  : '/data/mysql'
+  'mysqld_safe':
+    socket                   : '/data/mysql/mysql.sock'
+mysql::server::users:
+  '@localhost':
+    ensure        : 'absent'
+  '@mysql':
+    ensure        : 'absent'
+  'root@127.0.0.1':
+    ensure        : 'present'
+    password_hash : '*2470C0C06DEE42FD1618BB99005ADCA2EC9D1E19'
+  'root@mysql':
+    ensure        : 'present'
+    password_hash : '*2470C0C06DEE42FD1618BB99005ADCA2EC9D1E19'
+  'phpMyAdmin@10.0.0.41':
+    ensure        : 'present'
+    password_hash : '*579B049DA51764AAB35E4F86F04E149178A23745'
+  'puppetinaboxuser@10.0.0.%':
+    ensure        : 'present'
+    password_hash : '*2470C0C06DEE42FD1618BB99005ADCA2EC9D1E19'
+mysql::server::grants:
+  'phpMyAdmin@10.0.0.41/*.*':
+    ensure     : 'present'
+    options    : ['GRANT']
+    privileges : ['ALL']
+    table      : '*.*'
+    user       : 'phpMyAdmin@10.0.0.41'
+  'puppetinaboxuser@10.0.0.%/puppetinaboxdb.*':
+    ensure     : 'present'
+    options    : ''
+    privileges : ['SELECT', 'INSERT', 'UPDATE', 'DELETE', 'CREATE', 'DROP', 'REFERENCES', 'INDEX', 'ALTER', 'CREATE TEMPORARY TABLES', 'LOCK TABLES', 'CREATE ROUTINE', 'ALTER ROUTINE', 'EXECUTE']
+    table      : 'wikidb.*'
+    user       : 'puppetinaboxuser@10.0.0.%'
+mysql::server::databases:
+  test:
+    ensure  : 'absent'
+  puppetinaboxdb:
+    ensure  : 'present'
+    charset : 'utf8'
+

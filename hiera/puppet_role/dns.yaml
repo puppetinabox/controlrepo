@@ -1,0 +1,25 @@
+---
+classes:
+  role::dns
+bind_server_confs:
+  '/etc/named.conf':
+    listen_on_addr:
+      - '127.0.0.1'
+      - '10.0.0.253'
+    allow_query:
+      - 'localhost'
+      - '10.0.0.0/24'
+    zones:
+      0.0.10.in-addr.arpa:
+        - 'type master'
+        - 'file "named.0.0.10"'
+        - 'allow-update { none; }'
+      example.com:
+        - 'type master'
+        - 'file "named.example.com"'
+        - 'allow-update {none; }'
+bind_server_files:
+  'named.example.com':
+    source: 'puppet:///modules/lab_config/dns/example.com'
+  'named.0.0.10':
+    source: 'puppet:///modules/lab_config/dns/0.0.10'

@@ -1,0 +1,16 @@
+---
+ssh_authorized_keys:
+  'rsa-key-20150105':
+    user: 'padmin'
+    type: 'ssh-rsa'
+    key:  'AAAAB3NzaC1yc2EAAAABJQAAAIEAixib8xiytdy6OHNR1gpYff0xcaC8CbETinn2BjgMb9kFCgymWu1oaIYhdDYAAsF3pNraP9gMLb1UE/EzdjjaXdHvMNV2wUmqRGc7X5ad8RJE3XDR1bBfN6OPCLQMAdrZ8TAACBUpocRNyOqFSgwbccaEUgWFL4XelY3OCmRK76k='
+local_users:
+  padmin:
+    state:            'present'
+    comment:          'Puppet Admin'
+    groups:
+      - 'wheel'
+    last_change:      '2015-01-01'
+    password:         '$6$h\/T72V5u$BBYRNaVoJQ7VNTH\/3LnSGjtdDdaedI13Qm3KaAJwVrx4oCJV5y\/4mkcsY3E7D7QNbmN2k7ENtEmZpk10Rp7FD0'
+    password_max_age: '1000'
+yumrepo_url: 'http://yum.example.com/el-6.5/'
