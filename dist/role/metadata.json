@@ -1,0 +1,17 @@
+{
+  "name": "puppetinabox-role",
+  "version": "1.0.0",
+  "author": "rnelson0",
+  "summary": "Role module for roles and profiles",
+  "license": "Apache 2.0",
+  "source": "https://github.com/puppetinabox/role",
+  "issues_url": "https://github.com/puppetinabox/role/issues",
+  "project_page": "https://github.com/puppetinabox/role",
+  "dependencies": [
+    {
+      "name": "puppetlabs-stdlib",
+      "version_range": ">= 1.0.0"
+    }
+  ]
+}
+

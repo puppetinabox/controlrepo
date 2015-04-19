@@ -1,0 +1,10 @@
+---
+:backends:
+  - yaml
+:hierarchy:
+  - clientcert/%{clientcert}
+  - puppet_role/%{puppet_role}
+  - global
+
+:yaml:
+  :datadir: /etc/puppet/environments/%{environment}/hiera

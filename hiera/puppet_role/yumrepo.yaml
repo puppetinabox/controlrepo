@@ -1,0 +1,12 @@
+---
+classes:
+  - role::yumrepo
+repodirs:
+  - '/var/www/html/puppetrepo'
+  - '/var/cache/puppetrepo'
+yumrepos:
+  'el-6.5':
+    repository_dir       : '/var/www/html/puppetrepo/el-6.5'
+    repo_cache_dir       : '/var/cache/puppetrepo/el-6.5'
+    repo_group           : 'wheel'
+    suppress_cron_stdout : true

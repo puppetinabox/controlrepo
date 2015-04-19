@@ -1,0 +1,21 @@
+fixtures:
+  symlinks:
+    profile: "#{source_dir}"
+  repositories:
+    apache: 'git://github.com/puppetlabs/puppetlabs-apache'
+    bind: 'git://github.com/thias/puppet-bind'
+    certs: 'git://github.com/rnelson0/certs'
+    concat:
+      repo: 'git://github.com/puppetlabs/puppetlabs-concat'
+      ref: '1.2.0'
+    dhcp: 'git://github.com/ajjahn/puppet-dhcp'
+    epel: 'git://github.com/stahnma/puppet-module-epel'
+    firewall: 'git://github.com/puppetlabs/puppetlabs-firewall'
+    lvm: 'git://github.com/puppetlabs/puppetlabs-lvm'
+    mysql: 'git://github.com/puppetlabs/puppetlabs-mysql'
+    ntp: 'git://github.com/puppetlabs/puppetlabs-ntp'
+    ssh: 'git://github.com/saz/puppet-ssh'
+    stdlib: 'git://github.com/puppetlabs/puppetlabs-stdlib'
+    sudo: 'git://github.com/saz/puppet-sudo'
+    tftp: 'git://github.com/puppetlabs/puppetlabs-tftp'
+    xinetd: 'git://github.com/puppetlabs/puppetlabs-xinetd'
