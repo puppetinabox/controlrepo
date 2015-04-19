@@ -2,15 +2,11 @@ Package {
   allow_virtual => true,
 }
 
-file {'/etc/puppet/hiera':
-  ensure => directory,
-}
 class {'hiera':
   hierarchy => [
-    'puppet_role/%{puppet_role}',
     'clientcert/%{clientcert}',
-    '%{environment}',
+    'puppet_role/%{puppet_role}',
     'global',
   ],
-  datadir   => '/etc/puppet/hiera/data/',
+  datadir   => '/etc/puppet/environment/%{environment}/hiera',
 }
