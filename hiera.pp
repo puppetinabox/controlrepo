@@ -8,5 +8,5 @@ class {'hiera':
     'puppet_role/%{puppet_role}',
     'global',
   ],
-  datadir   => '/etc/puppet/environment/%{environment}/hiera',
+  datadir   => '/etc/puppet/environments/%{environment}/hiera',
 }
