@@ -1,0 +1,49 @@
+{
+  "name": "puppetinabox-profile",
+  "version": "1.0.0",
+  "author": "rnelson0",
+  "summary": "Profile module for roles and profiles",
+  "license": "Apache 2.0",
+  "source": "https://github.com/puppetinabox/profile",
+  "project_page": "https://github.com/puppetinabox/profile",
+  "issues_url": "https://github.com/puppetinabox/profile/issues",
+  "dependencies": [
+    {
+      "name": "puppetlabs-stdlib",
+      "version_range": ">= 1.0.0"
+    },
+    {
+      "name": "puppetlabs-firewall",
+      "version_range": ">= 1.1.1"
+    },
+    {
+      "name": "puppetlabs-apache",
+      "version_range": ">= 1.0.1"
+    },
+    {
+      "name": "puppetlabs-puppetdb",
+      "version_range": ">= 3.0.1"
+    },
+    {
+      "name": "puppetlabs-ntp",
+      "version_range": ">= 3.0.3"
+    },
+    {
+      "name": "puppetlabs-lvm",
+      "version_range": ">= 0.3.1"
+    },
+    {
+      "name": "saz-rsyslog",
+      "version_range": ">= 3.1.0"
+    },
+    {
+      "name": "saz-ssh",
+      "version_range": ">= 2.3.6"
+    },
+    {
+      "name": "stephenrjohnson-puppet",
+      "version_range": ">= 0.0.23"
+    }
+  ]
+}
+

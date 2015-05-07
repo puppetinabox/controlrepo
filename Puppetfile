@@ -26,7 +26,7 @@ mod 'puppetlabs/pe_gem', '0.0.1'
 mod 'puppetlabs/postgresql', '3.3.3'
 mod 'puppetlabs/puppetdb', '3.0.1'
 mod 'puppetlabs/rabbitmq', '4.0.0'
-mod 'puppetlabs/ruby', '0.1.0'
+mod 'puppetlabs/ruby', '0.4.0'
 mod 'puppetlabs/stdlib', '4.5.0'
 mod 'puppetlabs/tftp', '0.2.3'
 mod 'puppetlabs/vcsrepo', '1.0.1'
@@ -44,17 +44,5 @@ mod 'yguenane/ygrpms', '0.1.0'
 #mod 'zack/r10k', '1.0.2'
 
 # Modules from Github
-mod 'role',
-  :git => 'git@github.com:rnelson0/role'
-
-mod 'profile',
-  :git => 'git@github.com:rnelson0/profile'
-
-mod 'custom_facts',
-  :git => 'git@github.com:rnelson0/custom_facts'
-
 mod 'lab_config',
   :git => 'git@github.com:rnelson0/lab_config.git'
-
-mod 'linuxfw',
-  :git => 'git@github.com:rnelson0/linuxfw-1'
