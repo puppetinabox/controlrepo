@@ -13,7 +13,7 @@
 class profile::yumrepo (
   $vhost = 'yum.example.com',
 ) {
-  class {'::profile::apache': }
+  include ::profile::apache
 
   apache::vhost {$vhost:
     docroot    => '/var/www/html/puppetrepo',
