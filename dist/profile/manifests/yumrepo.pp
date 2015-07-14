@@ -13,7 +13,19 @@
 class profile::yumrepo (
   $vhost = 'yum.example.com',
 ) {
+
+  $repodirs = hiera('repodirs')
+
   include ::profile::apache
+
+  file { $repodirs:
+    ensure => directory,
+  }
+
+  $yumrepos = hiera_hash('yumrepos', undef)
+  if ($yumrepos != undef) {
+    create_resources('::createrepo', $yumrepos, {require => File[$repodirs]} )
+  }
 
   apache::vhost {$vhost:
     docroot    => '/var/www/html/puppetrepo',
