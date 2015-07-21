@@ -11,11 +11,8 @@
 # Copyright 2015 Rob Nelson
 #
 class profile::puppet_master {
-  include epel
-  class { '::puppet::master':
-    storeconfigs => true,
-    environments => 'directory',
-  }
+  include ::epel
+  include ::puppet::master
 
   package { 'r10k':
     ensure   => '1.4.0',

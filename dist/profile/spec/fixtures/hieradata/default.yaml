@@ -1,0 +1,62 @@
+---
+bind_server_confs:
+  '/etc/named.conf':
+    listen_on_addr:
+      - '127.0.0.1'
+    allow_query:
+      - 'localhost'
+bind_server_files:
+  'named.test':
+    source: 'name.test'
+sshvpn_hosts:
+  sample:
+    ensure  : 'present'
+    comment : 'Sample host'
+    ip      : '127.0.0.255'
+dhcp_server_subnets:
+  '10.0.0.0':
+    broadcast   : '10.0.0.255'
+    netmask     : '255.255.255.0'
+    routers     : '10.0.0.1'
+    range_begin : '10.0.0.100'
+    range_end   : '10.0.0.150'
+    dns_servers :
+      - '10.0.0.1'
+dhcp_server_hosts:
+  sample:
+    address:   10.0.0.254
+    hwaddress: 00:00:00:00:00:0a
+mysql::server::root_password: 'strongpassword'
+mysql::server::users:
+  'someuser@localhost':
+    ensure        : 'present'
+    password_hash : 'SOMETHING'
+mysql::server::grants:
+  'someuser@localhost/somedb.*':
+    ensure     : 'present'
+    options    : ['GRANT']
+    privileges : ['SELECT', 'INSERT', 'UPDATE', 'DELETE']
+    table      : 'somedb.*'
+    user       : 'someuser@localhost'
+mysql::server::databases:
+  somedb:
+    ensure  : 'present'
+    charset : 'utf8'
+mysql::server::backup::backupuser        : 'dbbackup'
+mysql::server::backup::backuppassword    : 'password'
+mysql::server::backup::backupdir         : '/data/mysql/backups'
+mysql::server::backup::backupcompress    : 'true'
+mysql::server::backup::backuprotate      : 90
+mysql::server::backup::file_per_database : 'true'
+mysql::server::backup::time              : ['*', '00']
+profile::phpmyadmin::servers:
+  test:
+    host: '1.2.3.4'
+    user: 'phpMyAdmin'
+    pass: 'password'
+tftp::files:
+  pxelinux.0:
+    source: puppet://modules/test/pxelinux.0
+yumrepo_name: 'el-6.5'
+yumrepo_desc: 'EL 6.5'
+yumrepo_url: 'http://yum.example/el-6.5/'
