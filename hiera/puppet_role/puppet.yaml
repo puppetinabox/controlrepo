@@ -1,3 +1,5 @@
 ---
 classes:
   role::puppet
+puppet::master::storeconfigs: true
+puppet::master::environments: 'directory'
