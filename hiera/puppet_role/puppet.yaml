@@ -3,3 +3,15 @@ classes:
   role::puppet
 puppet::master::storeconfigs: true
 puppet::master::environments: 'directory'
+r10k::version: '1.5.1'
+r10k::sources:
+  puppet:
+    remote: 'git@github.com:puppetinabox/controlrepo.git'
+    basedir: '/etc/puppet/environments'
+    prefix: false
+r10k::manage_modulepath: false
+r10k::webhook::config::use_mcollective: false
+r10k::webhook::config::public_key_path: '/etc/mcollective/server_public.pem'
+r10k::webhook::config::private_key_path: '/etc/mcollective/server_private.pem'
+r10k::webhook::user: 'root'
+r10k::webhook::group: 0
