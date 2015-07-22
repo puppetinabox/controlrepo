@@ -6,7 +6,7 @@ puppet::master::environments: 'directory'
 r10k::version: '1.5.1'
 r10k::sources:
   puppet:
-    remote: 'git@github.com:rnelson0/controlrepo-1.git'
+    remote: 'git@github.com:rnelson0/puppetinabox-controlrepo.git'
     basedir: '/etc/puppet/environments'
     prefix: false
 r10k::manage_modulepath: false
