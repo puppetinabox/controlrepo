@@ -2,19 +2,19 @@
 classes:
   role::dhcp
 dhcp_subnet:
-  '10.0.0.0':
-    broadcast   : '10.0.0.255'
+  '10.0.1.0':
+    broadcast   : '10.0.1.255'
     netmask     : '255.255.255.0'
-    routers     : '10.0.0.1'
-    range_begin : '10.0.0.100'
-    range_end   : '10.0.0.150'
+    routers     : '10.0.1.1'
+    range_begin : '10.0.1.100'
+    range_end   : '10.0.1.150'
     dns_servers :
-      - '10.0.0.253'
+      - '10.0.1.253'
     domain_name : 'example.com'
     other_opts  :
-      - 'option ntp-servers 10.0.0.1'
-      - 'next-server 10.0.0.251'
+      - 'option ntp-servers 10.0.1.1'
+      - 'next-server 10.0.1.251'
 dhcp_server_hosts:
   www:
-    address:   10.0.0.20
+    address:   10.0.1.20
     hwaddress: 00:00:00:9a:1d:3f

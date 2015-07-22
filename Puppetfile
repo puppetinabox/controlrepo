@@ -33,7 +33,7 @@ mod 'puppetlabs/vcsrepo', '1.0.1'
 mod 'puppetlabs/xinetd', '1.4.0'
 mod 'richardc/datacat', '0.4.3'
 mod 'rnelson0/certs', '0.6.1'
-mod 'rnelson0/local_user', '0.9.3'
+mod 'rnelson0/local_user', '1.0.1'
 mod 'saz/ssh', '2.4.0'
 mod 'saz/sudo', '3.0.6'
 mod 'stahnma/epel', '0.1.0'
@@ -45,4 +45,4 @@ mod 'zack/r10k', '2.8.0'
 
 # Modules from Github
 mod 'lab_config',
-  :git => 'git@github.com:puppetinabox/lab_config.git'
+  :git => 'git@github.com:rnelson0/lab_config.git'

@@ -10,6 +10,7 @@ describe 'profile::puppet_master', :type => :class do
 
   context 'with defaults for all parameters' do
     it { is_expected.to create_class('profile::puppet_master') }
+    it { is_expected.to contain_package('mcollective-common') }
     it { is_expected.to contain_class('epel') }
     it { is_expected.to contain_class('r10k') }
     it { is_expected.to contain_class('r10k::webhook') }
