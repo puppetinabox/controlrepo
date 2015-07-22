@@ -11,12 +11,16 @@
 # Copyright 2015 Rob Nelson
 #
 class profile::puppet_master {
+  package { 'mcollective-common':
+    ensure => present,
+  }
   include ::epel
   include ::puppet::master
 
   include ::r10k
   include ::r10k::webhook::config
   include ::r10k::webhook
+  Package['mcollective-common'] -> Class['r10k::webhook']
   Class['r10k::webhook::config'] -> Class['r10k::webhook']
 
   firewall { '100 allow agent checkins':
