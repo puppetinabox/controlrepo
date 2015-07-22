@@ -13,6 +13,7 @@ fixtures:
     firewall: 'git://github.com/puppetlabs/puppetlabs-firewall'
     git: 'git://github.com/puppetlabs/puppetlabs-git'
     inifile: 'git://github.com/puppetlabs/puppetlabs-inifile'
+    local_user: 'git://github.com/rnelson0/puppet-local_user'
     lvm: 'git://github.com/puppetlabs/puppetlabs-lvm'
     mysql: 'git://github.com/puppetlabs/puppetlabs-mysql'
     ntp: 'git://github.com/puppetlabs/puppetlabs-ntp'

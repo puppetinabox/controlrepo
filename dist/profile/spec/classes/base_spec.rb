@@ -18,5 +18,6 @@ describe 'profile::base', :type => :class do
     it { is_expected.to create_class('ntp') }
     it { is_expected.to create_class('ssh::server') }
     it { is_expected.to create_class('ssh::client') }
+    it { is_expected.to create_local_user('padmin') }
   end
 end
