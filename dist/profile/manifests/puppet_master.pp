@@ -14,13 +14,18 @@ class profile::puppet_master {
   include ::epel
   include ::puppet::master
 
-  package { 'r10k':
-    ensure   => '1.4.0',
-    provider => gem
-  }
+  include ::r10k
+  include ::r10k::webhook::config
+  include ::r10k::webhook
+  Class['r10k::webhook::config'] -> Class['r10k::webhook']
 
   firewall { '100 allow agent checkins':
     dport  => 8140,
+    proto  => tcp,
+    action => accept,
+  }
+  firewall { '110 zack-r10k web hook':
+    dport  => 8088,
     proto  => tcp,
     action => accept,
   }
