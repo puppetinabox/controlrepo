@@ -1,0 +1,3 @@
+profile::build::gems:
+  test:
+    ensure: present
