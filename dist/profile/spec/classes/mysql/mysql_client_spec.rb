@@ -1,7 +1,6 @@
 require 'spec_helper'
 describe 'profile::mysql::client', :type => :class do
-  let :facts do
-  {
+  let :facts do {
     :osfamily               => 'RedHat',
     :operatingsystem        => 'RedHat',
     :operatingsystemrelease => '6',

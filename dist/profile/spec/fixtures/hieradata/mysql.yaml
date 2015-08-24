@@ -1,0 +1,24 @@
+---
+mysql::server::root_password: 'strongpassword'
+mysql::server::users:
+  'someuser@localhost':
+    ensure        : 'present'
+    password_hash : 'SOMETHING'
+mysql::server::grants:
+  'someuser@localhost/somedb.*':
+    ensure     : 'present'
+    options    : ['GRANT']
+    privileges : ['SELECT', 'INSERT', 'UPDATE', 'DELETE']
+    table      : 'somedb.*'
+    user       : 'someuser@localhost'
+mysql::server::databases:
+  somedb:
+    ensure  : 'present'
+    charset : 'utf8'
+mysql::server::backup::backupuser        : 'dbbackup'
+mysql::server::backup::backuppassword    : 'password'
+mysql::server::backup::backupdir         : '/data/mysql/backups'
+mysql::server::backup::backupcompress    : 'true'
+mysql::server::backup::backuprotate      : 90
+mysql::server::backup::file_per_database : 'true'
+mysql::server::backup::time              : ['*', '00']

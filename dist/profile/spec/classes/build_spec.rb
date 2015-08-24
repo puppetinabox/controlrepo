@@ -1,10 +1,8 @@
 require 'spec_helper'
 describe 'profile::build' do
-  let :facts do
-  {
+  let :facts do {
     :clientcert => 'build',
-  }
-  end
+  } end
 
   context 'with defaults for all parameters' do
     let :facts do
@@ -12,6 +10,7 @@ describe 'profile::build' do
         :is_pe => false,
       })
     end
+
     it { should create_class('profile::build') }
     it { should contain_class('rvm') }
     it { should contain_rvm_system_ruby('ruby-1.9.3-p511') }

@@ -1,7 +1,6 @@
 require 'spec_helper'
 describe 'profile::apache', :type => :class do
-  let :facts do
-  {
+  let :facts do {
     :id                     => 'root',
     :kernel                 => 'Linux',
     :osfamily               => 'RedHat',
@@ -9,8 +8,7 @@ describe 'profile::apache', :type => :class do
     :operatingsystemrelease => '6',
     :concat_basedir         => '/dne',
     :path                   => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
-  }
-  end
+  } end
 
   context 'with defaults for all parameters' do
     it { is_expected.to create_class('profile::apache') }

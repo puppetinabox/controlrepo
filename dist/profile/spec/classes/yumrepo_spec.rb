@@ -1,7 +1,7 @@
 require 'spec_helper'
 describe 'profile::yumrepo', :type => :class do
-  let :facts do
-  {
+  let :facts do {
+    :clientcert => 'yum',
     :id                     => 'root',
     :kernel                 => 'Linux',
     :osfamily               => 'RedHat',
@@ -9,16 +9,9 @@ describe 'profile::yumrepo', :type => :class do
     :operatingsystemrelease => '6',
     :concat_basedir         => '/dne',
     :path                   => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
-  }
-  end
+  } end
 
   context 'with defaults for all parameters' do
-    let :facts do
-      super().merge({
-	:clientcert => 'yum',
-      })
-    end
-
     it { is_expected.to create_class('profile::yumrepo') }
     it { is_expected.to contain_file('/repodir') }
     it { is_expected.to contain_createrepo('testrepo') }

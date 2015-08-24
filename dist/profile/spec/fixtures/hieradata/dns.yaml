@@ -1,0 +1,10 @@
+---
+bind_server_confs:
+  '/etc/named.conf':
+    listen_on_addr:
+      - '127.0.0.1'
+    allow_query:
+      - 'localhost'
+bind_server_files:
+  'named.test':
+    source: 'name.test'

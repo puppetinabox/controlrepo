@@ -1,7 +1,7 @@
 require 'spec_helper'
 describe 'profile::phpmyadmin', :type => :class do
-  let :facts do
-  {
+  let :facts do {
+    :clientcert             => 'phpmyadmin',
     :id                     => 'root',
     :kernel                 => 'Linux',
     :osfamily               => 'RedHat',
@@ -9,16 +9,9 @@ describe 'profile::phpmyadmin', :type => :class do
     :operatingsystemrelease => '6',
     :concat_basedir         => '/dne',
     :path                   => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
-  }
-  end
+  } end
 
   context 'with dbpass and cname' do
-    let (:params) do
-    {
-      :cname  => 'phpmyadmin.example.com',
-    }
-    end
-
     it { is_expected.to create_class('profile::phpmyadmin') }
     it { is_expected.to contain_package('phpMyAdmin') }
     it { is_expected.to contain_selboolean('httpd_can_network_connect_db') }
