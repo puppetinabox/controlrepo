@@ -1,7 +1,7 @@
 ---
 classes:
   role::dhcp
-dhcp_subnet:
+dhcp_server_subnets:
   '10.0.0.0':
     broadcast   : '10.0.0.255'
     netmask     : '255.255.255.0'
