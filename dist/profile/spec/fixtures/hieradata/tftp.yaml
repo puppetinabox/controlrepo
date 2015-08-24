@@ -1,0 +1,4 @@
+---
+tftp::files:
+  pxelinux.0:
+    source: puppet://modules/test/pxelinux.0

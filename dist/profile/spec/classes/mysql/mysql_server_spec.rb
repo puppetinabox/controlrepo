@@ -1,12 +1,11 @@
 require 'spec_helper'
 describe 'profile::mysql::server', :type => :class do
-  let :facts do
-  {
+  let :facts do {
+    :clientcert             => 'mysql',
     :osfamily               => 'RedHat',
     :operatingsystem        => 'RedHat',
     :operatingsystemrelease => '6',
-  }
-  end
+  } end
 
   context 'with defaults for all parameters' do
     it { is_expected.to create_class('profile::mysql::server') }

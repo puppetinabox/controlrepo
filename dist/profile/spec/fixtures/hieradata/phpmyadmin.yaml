@@ -1,0 +1,7 @@
+---
+profile::phpmyadmin::cname: 'phpmyadmin.example.com'
+profile::phpmyadmin::servers:
+  test:
+    host: '1.2.3.4'
+    user: 'phpMyAdmin'
+    pass: 'password'

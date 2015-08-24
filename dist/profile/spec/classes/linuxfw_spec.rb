@@ -1,10 +1,8 @@
 require 'spec_helper'
 describe 'profile::linuxfw', :type => :class do
-  let :facts do
-  {
+  let :facts do {
     :kernel                 => 'Linux',
-  }
-  end
+  } end
 
   context 'with defaults for all parameters' do
     it { is_expected.to create_class('profile::linuxfw') }
