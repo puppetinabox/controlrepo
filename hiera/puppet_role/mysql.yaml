@@ -1,6 +1,6 @@
 ---
 classes:
-  role::mysql_server
+  - '::role::mysql_server'
 mysql::server::root_password    : 'password'
 mysql::server::restart          : 'true'
 mysql::server::backup::backupuser        : 'dbbackup'

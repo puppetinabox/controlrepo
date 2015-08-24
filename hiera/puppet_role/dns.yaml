@@ -1,6 +1,6 @@
 ---
 classes:
-  role::dns
+  - '::role::dns'
 bind_server_confs:
   '/etc/named.conf':
     listen_on_addr:
