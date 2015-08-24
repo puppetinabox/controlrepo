@@ -1,0 +1,10 @@
+---
+profile::yumrepo::repodirs:
+  - '/repodir'
+  - '/cachedir'
+profile::yumrepo::repos:
+  'testrepo':
+    repository_dir       : '/repodir/testrepo'
+    repo_cache_dir       : '/cachedir/testrepo'
+    repo_group           : 'root'
+    suppress_cron_stdout : true
