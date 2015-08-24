@@ -1,6 +1,6 @@
 ---
 classes:
-  'role::phpmyadmin'
+  - '::role::phpmyadmin'
 profile::phpmyadmin::serveradmin      : 'root@example.com'
 profile::phpmyadmin::docroot          : '/usr/share/phpMyAdmin/'
 profile::phpmyadmin::servers:

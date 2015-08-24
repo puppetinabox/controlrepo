@@ -1,6 +1,6 @@
 ---
 classes:
-  role::puppet
+  - '::role::puppet'
 puppet::master::storeconfigs: true
 puppet::master::environments: 'directory'
 r10k::version: '1.5.1'

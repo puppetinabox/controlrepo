@@ -1,6 +1,6 @@
 ---
 classes:
-  '::role::build'
+  - '::role::build'
 profile::build::rvm_version: 'ruby-1.9.3-p551'
 profile::build::gems:
   fpm:

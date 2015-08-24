@@ -1,6 +1,6 @@
 ---
 classes:
-  - role::yumrepo
+  - '::role::yumrepo'
 profile::yumrepo::repodirs:
   - '/var/www/html/puppetrepo'
   - '/var/cache/puppetrepo'

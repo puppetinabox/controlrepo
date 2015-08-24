@@ -1,3 +1,3 @@
 ---
 classes:
-  role::webserver
+  - '::role::webserver'
