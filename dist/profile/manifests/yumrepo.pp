@@ -12,17 +12,15 @@
 #
 class profile::yumrepo (
   $vhost = 'yum.example.com',
+  $repodirs,
 ) {
-
-  $repodirs = hiera('repodirs')
-
   include ::profile::apache
 
   file { $repodirs:
     ensure => directory,
   }
 
-  $yumrepos = hiera_hash('yumrepos', undef)
+  $yumrepos = hiera_hash('profile::yumrepo::repos', undef)
   if ($yumrepos != undef) {
     create_resources('::createrepo', $yumrepos, {require => File[$repodirs]} )
   }
