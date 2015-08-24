@@ -1,10 +1,10 @@
 ---
 classes:
   - role::yumrepo
-repodirs:
+profile::yumrepo::repodirs:
   - '/var/www/html/puppetrepo'
   - '/var/cache/puppetrepo'
-yumrepos:
+profile::yumrepo::repos:
   'el-6.5':
     repository_dir       : '/var/www/html/puppetrepo/el-6.5'
     repo_cache_dir       : '/var/cache/puppetrepo/el-6.5'
