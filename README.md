@@ -14,13 +14,21 @@ Please refer to the Wiki on the right side of this page or by following [this li
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :D
 
+View project status at [waffle.io](https://waffle.io/puppetinabox/controlrepo/): [![Stories in Ready](https://badge.waffle.io/puppetinabox/controlrepo.svg?label=ready&title=Ready)](http://waffle.io/puppetinabox/controlrepo) 
+
+[![Throughput Graph](https://graphs.waffle.io/puppetinabox/controlrepo/throughput.svg)](https://waffle.io/puppetinabox/controlrepo/metrics) 
+
 ## History
 
 Jan 2015: Initial commit
 
 ## Credits
 
-TODO: Write Credits
+Founder: [Rob Nelson](https://github.com/rnelson)
+
+Contributing authors:
+* [Matyas Danter](https://github.com/mdanter)
+* [Sean Scott King](https://github.com/seanscottking)
 
 ## License
 
