@@ -15,7 +15,7 @@
 # Copyright 2015 Rob Nelson
 #
 class profile::linuxfw {
-  resources { "firewall":
+  resources { 'firewall':
     purge => true
   }
 

@@ -14,12 +14,11 @@ class profile::build (
   $rvm_version = 'ruby-1.9.3-p511',
   $gems        = {},
 ) {
-   
   package {['ruby-devel', 'gcc', 'rpm-build']:
     ensure => present,
   }
 
-  if ($is_pe == true) {
+  if ($::is_pe == true) {
     # Do nothing yet
   }
   else {
