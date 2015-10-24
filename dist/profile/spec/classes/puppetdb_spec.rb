@@ -3,6 +3,7 @@ describe 'profile::puppetdb', :type => :class do
   let :facts do {
     :osfamily               => 'RedHat',
     :concat_basedir         => '/dne',
+    :kernel                 => 'Linux',
   } end
 
   context 'with defaults for all parameters' do
