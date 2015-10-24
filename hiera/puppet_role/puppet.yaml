@@ -3,6 +3,7 @@ classes:
   - '::role::puppet'
 puppet::master::storeconfigs: true
 puppet::master::environments: 'directory'
+puppetdb::listen_address: '0.0.0.0'
 r10k::version: '1.5.1'
 r10k::sources:
   puppet:
