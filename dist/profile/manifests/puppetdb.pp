@@ -13,4 +13,10 @@
 class profile::puppetdb {
   include ::puppetdb
   include ::puppetdb::master::config
+
+  firewall {'100 PuppetDB Dashboard':
+    dport  => 8080,
+    proto  => tcp,
+    action => accept,
+  }
 }
