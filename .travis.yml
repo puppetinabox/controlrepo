@@ -2,7 +2,7 @@
 sudo: false
 language: ruby
 bundler_args: --without development system_tests
-script: "cd dist/profile && bundle exec rake validate && bundle exec rake lint && bundle exec rake spec SPEC_OPTS='--format documentation'"
+script: "cd dist/profile && bundle exec rake test"
 notifications:
   email: false
 rvm:
