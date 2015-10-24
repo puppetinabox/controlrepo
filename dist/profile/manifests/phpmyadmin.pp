@@ -35,7 +35,7 @@ class profile::phpmyadmin (
   }
   Certs::Vhost<| |> -> Apache::Vhost<| |>
 
-  apache::vhost { $cname:
+  ::apache::vhost { $cname:
     port        => 443,
     docroot     => $docroot,
     ssl         => true,
@@ -45,10 +45,10 @@ class profile::phpmyadmin (
     directories => [
       {
         'path' => '/usr/share/phpMyAdmin/',
-      }
+      },
     ],
   }
-  include apache::mod::php
+  include ::apache::mod::php
 
   include ::epel
 

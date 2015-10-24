@@ -12,7 +12,7 @@
 #
 class profile::dhcp {
   # DHCP service and host reservations
-  include dhcp::server
+  include ::dhcp::server
   $dhcp_server_subnets = hiera_hash('dhcp_server_subnets', undef)
   if ($dhcp_server_subnets) {
     create_resources('dhcp::server::subnet', $dhcp_server_subnets)

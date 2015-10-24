@@ -12,7 +12,7 @@
 #
 class profile::dns {
   # Named package and configs
-  include bind
+  include ::bind
   $bind_server_confs = hiera_hash('bind_server_confs', undef)
   if ($bind_server_confs) {
     create_resources('bind::server::conf', $bind_server_confs)
