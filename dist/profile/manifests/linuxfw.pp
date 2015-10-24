@@ -16,7 +16,7 @@
 #
 class profile::linuxfw {
   resources { 'firewall':
-    purge => true
+    purge => true,
   }
 
   Firewall {
