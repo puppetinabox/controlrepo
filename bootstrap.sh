@@ -11,6 +11,7 @@ puppet module install --modulepath=/root/bootstrap/modules hunner/hiera --versio
 puppet apply --modulepath=/root/bootstrap/modules master.pp && \
 puppet apply --modulepath=/root/bootstrap/modules hiera.pp && \
 puppet apply --modulepath=/root/bootstrap/modules r10k_installation.pp && \
+puppet apply -e 'host { "puppet": ip => "127.0.1.1" }'
 # If everything went well, deploy using r10k
 r10k deploy environment -p
 
