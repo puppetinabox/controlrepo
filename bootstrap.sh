@@ -2,6 +2,7 @@
 
 # Add bootstrap modules
 mkdir -p /root/bootstrap/modules
+puppet module install --modulepath=/root/bootstrap/modules puppetlabs/puppetdb --version 3.0.1
 puppet module install --modulepath=/root/bootstrap/modules zack/r10k --version 2.5.4
 puppet module install --modulepath=/root/bootstrap/modules stahnma/epel --version 1.0.2
 puppet module install --modulepath=/root/bootstrap/modules stephenrjohnson/puppet --version 1.3.1
