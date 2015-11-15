@@ -25,6 +25,7 @@ group :development do
   gem "travis-lint"
   gem "puppet-blacksmith"
   gem "guard-rake"
+  gem 'generate-puppetfile'
 end
 
 group :system_tests do
