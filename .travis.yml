@@ -1,7 +1,4 @@
 ---
-branches:
-  only:
-    - master
 sudo: false
 language: ruby
 bundler_args: --without development system_tests
