@@ -1,8 +1,10 @@
 require 'spec_helper'
 describe 'profile::build' do
-  let :facts do {
-    :clientcert => 'build',
-  } end
+  let :facts do
+    {
+      :clientcert => 'build',
+    }
+  end
 
   context 'with defaults for all parameters' do
     let :facts do
