@@ -1,6 +1,9 @@
 ---
 sudo: false
 language: ruby
+branches:
+  only:
+    production
 bundler_args: --without development system_tests
 script: "cd dist/profile && bundle exec rake test"
 notifications:
@@ -16,8 +19,8 @@ env:
   - PUPPET_VERSION="~> 3.5.0" STRICT_VARIABLES=yes
   - PUPPET_VERSION="~> 3.6.0" STRICT_VARIABLES=yes
   - PUPPET_VERSION="~> 3.7.0" STRICT_VARIABLES=yes
-  #- PUPPET_VERSION="~> 3.7.0" STRICT_VARIABLES=yes FUTURE_PARSER=yes
-  #- PUPPET_VERSION="~> 4.0.0" STRICT_VARIABLES=yes
+  - PUPPET_VERSION="~> 3.7.0" STRICT_VARIABLES=yes FUTURE_PARSER=yes
+  - PUPPET_VERSION="~> 4.0.0" STRICT_VARIABLES=yes
 matrix:
   exclude:
   # Ruby 2.1.0
@@ -27,3 +30,5 @@ matrix:
     env: PUPPET_VERSION="~> 3.3.0"
   - rvm: 2.1.0
     env: PUPPET_VERSION="~> 3.4.0"
+  allow_failures:
+    - env: PUPPET_VERSION="~> 4.0.0" STRICT_VARIABLES=yes

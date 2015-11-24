@@ -1,3 +1,12 @@
-Gemfile.lock
-vendor
-.bundle
+.*.sw?
+/pkg
+/spec/fixtures
+/.rspec_system
+/.vagrant
+/.bundle
+/vendor
+/Gemfile.lock
+/junit
+/log
+.yardoc
+coverage
