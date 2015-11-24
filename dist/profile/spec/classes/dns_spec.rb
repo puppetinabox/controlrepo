@@ -1,8 +1,10 @@
 require 'spec_helper'
 describe 'profile::dns', :type => :class do
-  let :facts do {
-    :clientcert => 'dns',
-  } end
+  let :facts do
+    {
+      :clientcert => 'dns',
+    }
+  end
 
   context 'with defaults for all parameters' do
     it { is_expected.to create_class('profile::dns') }

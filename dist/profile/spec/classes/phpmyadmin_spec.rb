@@ -1,15 +1,17 @@
 require 'spec_helper'
 describe 'profile::phpmyadmin', :type => :class do
-  let :facts do {
-    :clientcert             => 'phpmyadmin',
-    :id                     => 'root',
-    :kernel                 => 'Linux',
-    :osfamily               => 'RedHat',
-    :operatingsystem        => 'RedHat',
-    :operatingsystemrelease => '6',
-    :concat_basedir         => '/dne',
-    :path                   => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
-  } end
+  let :facts do
+    {
+      :clientcert             => 'phpmyadmin',
+      :id                     => 'root',
+      :kernel                 => 'Linux',
+      :osfamily               => 'RedHat',
+      :operatingsystem        => 'RedHat',
+      :operatingsystemrelease => '6',
+      :concat_basedir         => '/dne',
+      :path                   => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
+    }
+  end
 
   context 'with dbpass and cname' do
     it { is_expected.to create_class('profile::phpmyadmin') }
@@ -21,13 +23,13 @@ describe 'profile::phpmyadmin', :type => :class do
     it { is_expected.to contain_class('apache::mod::php') }
     it { is_expected.to contain_file('/etc/httpd/conf.d/phpMyAdmin.conf').with({
       :ensure => 'absent'
-    }) }
+    } ) }
     it { is_expected.to contain_file('/etc/phpMyAdmin').with({
       :ensure => 'directory',
-      :mode   => '0755'
-    }) }
+      :mode => '0755'
+    } ) }
     it { is_expected.to contain_file('config.inc.php').with({
-      :mode   => '0644'
-    }) }
+      :mode => '0644'
+    } ) }
   end
 end
