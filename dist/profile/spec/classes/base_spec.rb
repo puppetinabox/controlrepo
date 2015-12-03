@@ -2,14 +2,17 @@ require 'spec_helper'
 describe 'profile::base', :type => :class do
   let :facts do
     {
-      :id                     => 'root',
-      :kernel                 => 'Linux',
-      :osfamily               => 'RedHat',
-      :operatingsystem        => 'RedHat',
-      :operatingsystemrelease => '6',
-      :concat_basedir         => '/dne',
-      :path                   => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
-  }
+      :id => 'root',
+      :kernel => 'Linux',
+      :osfamily => 'RedHat',
+      :operatingsystem => 'RedHat',
+      :operatingsystemrelease => '7.2',
+      :operatingsystemmajrelease => '7',
+      :concat_basedir => '/dne',
+      :path => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
+      :puppetversion => '4.3.1',
+      :sudoversion => '1.8.6p7',
+    }
   end
 
   context 'with defaults for all parameters' do

@@ -1,10 +1,12 @@
 require 'spec_helper'
 describe 'profile::mysql::client', :type => :class do
-  let :facts do {
-    :osfamily               => 'RedHat',
-    :operatingsystem        => 'RedHat',
-    :operatingsystemrelease => '6',
-  }
+  let :facts do 
+    {
+      :osfamily => 'RedHat',
+      :operatingsystem => 'RedHat',
+      :operatingsystemrelease => '7.2',
+      :operatingsystemmajrelease => '7',
+    }
   end
 
   context 'with defaults for all parameters' do

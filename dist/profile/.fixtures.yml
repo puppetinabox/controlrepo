@@ -5,9 +5,7 @@ fixtures:
     apache: 'git://github.com/puppetlabs/puppetlabs-apache'
     bind: 'git://github.com/thias/puppet-bind'
     certs: 'git://github.com/rnelson0/puppet-certs'
-    concat:
-      repo: 'git://github.com/puppetlabs/puppetlabs-concat'
-      ref: '1.2.0'
+    concat: 'git://github.com/puppetlabs/puppetlabs-concat'
     createrepo: 'git://github.com/pall-valmundsson/puppet-createrepo'
     dhcp: 'git://github.com/ajjahn/puppet-dhcp'
     epel: 'git://github.com/stahnma/puppet-module-epel'
@@ -19,7 +17,7 @@ fixtures:
     mysql: 'git://github.com/puppetlabs/puppetlabs-mysql'
     ntp: 'git://github.com/puppetlabs/puppetlabs-ntp'
     postgresql: 'git://github.com/puppetlabs/puppetlabs-postgresql'
-    puppet: 'git://github.com/stephenrjohnson/puppetmodule'
+    puppet:  https://github.com/jlambert121/jlambert121-puppet
     puppetdb: 'git://github.com/puppetlabs/puppetlabs-puppetdb'
     r10k: 'git://github.com/acidprime/r10k'
     ruby: 'git://github.com/puppetlabs/puppetlabs-ruby'

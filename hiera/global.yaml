@@ -10,6 +10,7 @@ local_users:
     comment:          'Puppet Admin'
     groups:
       - 'wheel'
+    manage_groups:    true
     last_change:      '2015-01-01'
     password:         '$6$h\/T72V5u$BBYRNaVoJQ7VNTH\/3LnSGjtdDdaedI13Qm3KaAJwVrx4oCJV5y\/4mkcsY3E7D7QNbmN2k7ENtEmZpk10Rp7FD0'
     password_max_age: '1000'
@@ -34,3 +35,4 @@ ntp::servers:
   - '0.pool.ntp.org'
   - '2.centos.pool.ntp.org'
   - '1.rhel.pool.ntp.org'
+puppet::runmode: 'service'

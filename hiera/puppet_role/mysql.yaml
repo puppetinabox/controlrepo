@@ -34,25 +34,25 @@ mysql::server::users:
   'root@mysql':
     ensure        : 'present'
     password_hash : '*2470C0C06DEE42FD1618BB99005ADCA2EC9D1E19'
-  'phpMyAdmin@10.0.0.41':
+  'phpMyAdmin@10.0.1.41':
     ensure        : 'present'
     password_hash : '*579B049DA51764AAB35E4F86F04E149178A23745'
-  'puppetinaboxuser@10.0.0.%':
+  'puppetinaboxuser@10.0.1.%':
     ensure        : 'present'
     password_hash : '*2470C0C06DEE42FD1618BB99005ADCA2EC9D1E19'
 mysql::server::grants:
-  'phpMyAdmin@10.0.0.41/*.*':
+  'phpMyAdmin@10.0.1.41/*.*':
     ensure     : 'present'
     options    : ['GRANT']
     privileges : ['ALL']
     table      : '*.*'
-    user       : 'phpMyAdmin@10.0.0.41'
-  'puppetinaboxuser@10.0.0.%/puppetinaboxdb.*':
+    user       : 'phpMyAdmin@10.0.1.41'
+  'puppetinaboxuser@10.0.1.%/puppetinaboxdb.*':
     ensure     : 'present'
     options    : ''
     privileges : ['SELECT', 'INSERT', 'UPDATE', 'DELETE', 'CREATE', 'DROP', 'REFERENCES', 'INDEX', 'ALTER', 'CREATE TEMPORARY TABLES', 'LOCK TABLES', 'CREATE ROUTINE', 'ALTER ROUTINE', 'EXECUTE']
     table      : 'wikidb.*'
-    user       : 'puppetinaboxuser@10.0.0.%'
+    user       : 'puppetinaboxuser@10.0.1.%'
 mysql::server::databases:
   test:
     ensure  : 'absent'
