@@ -2,11 +2,13 @@ require 'spec_helper'
 describe 'profile::mysql::server', :type => :class do
   let :facts do
     {
-      :clientcert             => 'mysql',
-      :osfamily               => 'RedHat',
-      :operatingsystem        => 'RedHat',
-      :operatingsystemrelease => '6',
-  }
+      :clientcert => 'mysql',
+      :osfamily => 'RedHat',
+      :operatingsystem => 'RedHat',
+      :operatingsystemrelease => '7.2',
+      :operatingsystemmajrelease => '7',
+      :puppetversion => '4.3.1',
+    }
   end
 
   context 'with defaults for all parameters' do

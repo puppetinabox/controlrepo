@@ -16,7 +16,7 @@ describe 'profile::dhcp', :type => :class do
   context 'with defaults for all parameters' do
     it { is_expected.to create_class('profile::dhcp') }
     it { is_expected.to contain_package('dhcp') }
-    it { is_expected.to contain_dhcp__server__subnet('10.0.0.0') }
+    it { is_expected.to contain_dhcp__server__subnet('10.0.1.0') }
     it { is_expected.to contain_dhcp__server__host('sample') }
   end
 end

@@ -1,0 +1,6 @@
+---
+puppet::server: true
+puppet::dns_alt_names:
+  - 'puppet'
+puppet::puppetdb_server: 'puppet.example.com'
+puppet::puppetdb: true
