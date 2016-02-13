@@ -30,7 +30,7 @@ class profile::base {
   # Enable when in use
   $yumrepo_url = hiera('yumrepo_url')
   yumrepo {'lab':
-    descr    => 'Lab El 6.5 - x86_64',
+    descr    => 'Lab EL - x86_64',
     baseurl  => $yumrepo_url,
     enabled  => 0,
     gpgcheck => 0,
