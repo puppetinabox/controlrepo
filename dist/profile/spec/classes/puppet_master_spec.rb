@@ -1,4 +1,5 @@
 require 'spec_helper'
+
 describe 'profile::puppet_master', :type => :class do
   let (:facts) do
     {
@@ -19,7 +20,7 @@ describe 'profile::puppet_master', :type => :class do
   end 
 
   let (:pre_condition) {
-    "package('puppetdb': ensure => present, }"
+    "package{'puppetdb': ensure => present, }"
   }
 
   context 'with defaults for all parameters' do
