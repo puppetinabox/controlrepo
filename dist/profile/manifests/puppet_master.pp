@@ -20,6 +20,13 @@ class profile::puppet_master {
   Class['r10k::webhook::config'] -> Class['r10k::webhook']
   Package['puppetdb'] -> Service[webhook]
 
+  # Deploy the configuration module on a regular basis
+  cron {'lab_config deploy':
+    ensure => present,
+    command => 'r10k deploy module lab_config',
+    minute => [0, 15, 30, 45],
+  }
+
   # evenup/puppet includes a firewall rule for the puppetserver service
   firewall { '110 zack-r10k web hook':
     dport  => 8088,
