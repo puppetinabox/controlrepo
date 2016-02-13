@@ -1,9 +1,7 @@
 ---
 ssh_authorized_keys:
   testkey: {}
-yumrepo_name: 'el-6.5'
-yumrepo_desc: 'EL 6.5'
-yumrepo_url: 'http://yum.example/el-6.5/'
+yumrepo_url: 'http://yum.example.com/testrepo/'
 local_users:
   testuser:
     state: 'present'

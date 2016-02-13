@@ -14,7 +14,7 @@ local_users:
     last_change:      '2015-01-01'
     password:         '$6$h\/T72V5u$BBYRNaVoJQ7VNTH\/3LnSGjtdDdaedI13Qm3KaAJwVrx4oCJV5y\/4mkcsY3E7D7QNbmN2k7ENtEmZpk10Rp7FD0'
     password_max_age: '1000'
-yumrepo_url: 'http://yum.example.com/el-6.5/'
+yumrepo_url: 'http://yum.example.com/el7/'
 ssh::server::options:
   'PermitRootLogin'          : 'yes'
   'Protocol'                 : '2'
