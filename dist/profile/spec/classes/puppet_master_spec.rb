@@ -1,4 +1,5 @@
 require 'spec_helper'
+
 describe 'profile::puppet_master', :type => :class do
   let (:facts) do
     {
@@ -19,7 +20,7 @@ describe 'profile::puppet_master', :type => :class do
   end 
 
   let (:pre_condition) {
-    "package('puppetdb': ensure => present, }"
+    "package{'puppetdb': ensure => present, }"
   }
 
   context 'with defaults for all parameters' do
@@ -37,5 +38,6 @@ describe 'profile::puppet_master', :type => :class do
     it { is_expected.to contain_class('r10k::webhook') }
     it { is_expected.to contain_class('r10k::webhook::config') }
     it { is_expected.to contain_firewall('110 zack-r10k web hook') }
+    it { is_expected.to contain_cron('lab_config deploy') }
   end
 end
