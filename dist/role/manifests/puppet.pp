@@ -14,5 +14,4 @@ class role::puppet {
   include profile::base  # All roles should have the base profile
   include profile::puppet_master
   include profile::puppetdb
-  include profile::hiera
 }
