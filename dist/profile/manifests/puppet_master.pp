@@ -13,6 +13,7 @@
 class profile::puppet_master {
   include ::epel
   include ::puppet
+  include ::hiera
 
   include ::r10k
   include ::r10k::webhook::config

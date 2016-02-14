@@ -28,3 +28,4 @@ fixtures:
     tftp: 'git://github.com/puppetlabs/puppetlabs-tftp'
     vcsrepo: "git://github.com/puppetlabs/puppetlabs-vcsrepo"
     xinetd: 'git://github.com/puppetlabs/puppetlabs-xinetd'
+    hiera: https://github.com/hunner/puppet-hiera

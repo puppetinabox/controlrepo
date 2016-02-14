@@ -34,6 +34,7 @@ describe 'profile::puppet_master', :type => :class do
       with_ensure('latest')
     }
 
+    it { is_expected.to contain_class('hiera') }
     it { is_expected.to contain_class('r10k') }
     it { is_expected.to contain_class('r10k::webhook') }
     it { is_expected.to contain_class('r10k::webhook::config') }

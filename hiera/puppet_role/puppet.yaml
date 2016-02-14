@@ -1,6 +1,11 @@
 ---
 classes:
   - '::role::puppet'
+hiera::hierarchy:
+  - 'clientcert/%%{::}{clientcert}'
+  - 'puppet_role/%%{::}{puppet_role}'
+  - 'global'
+hiera::datadir: '/etc/puppetlabs/code/environments/%%{::}{::environment}/hiera'
 puppet::server: true
 puppet::server_version: 'latest'
 puppet::dns_alt_names:
