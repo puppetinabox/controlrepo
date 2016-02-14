@@ -44,6 +44,8 @@ mod 'thias/bind', '0.5.2'
 mod 'yguenane/augeas', '0.1.1'
 mod 'yguenane/ygrpms', '0.1.0'
 mod 'zack/r10k', '3.2.0'
+mod 'danzilio/kickstart', '0.2.0'
+mod 'puppet/community_kickstarts', '0.2.3'
 # Discovered elements from existing Puppetfile
 # Modules from Github
 mod 'lab_config',

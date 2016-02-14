@@ -1,0 +1,10 @@
+# Flush the firewall rules out and disable firewalld
+systemctl disable firewalld
+systemctl stop firewalld
+yum -y install iptables-services
+systemctl start iptables
+systemctl enable iptables
+iptables -F
+iptables -X
+/usr/libexec/iptables/iptables.init save
+systemctl restart iptables
