@@ -21,7 +21,7 @@ View project status at [waffle.io](https://waffle.io/puppetinabox/controlrepo/):
 ## History
 
 Jan 2015: Initial commit.
-Feb 2016: New release with puppetserver; tagged v2.1.0 as the last build supporting passenger.
+Feb 2016: New release with puppetserver; tagged v2.0.1 as the last build supporting passenger.
 
 ## Credits
 
