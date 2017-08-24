@@ -1,24 +1,22 @@
-# ([a-z]+)[0-9]+, i.e. www01 or logger22 have a puppet_role of www or logger
-if Facter.value(:hostname) =~ /^([a-z]+)[0-9]+$/
-  Facter.add('puppet_role') do
-    setcode do
-      $1
-    end
+# ((a-z]+)-([a-z]+)[0-9]*, i.e. dur-www01 or chi-logger have a puppet_role of www or logger
+Facter.add(:puppet_role) do
+  confine :hostname do |value|
+    value =~ /^([a-z]+)-([a-z]+)[0-9]*$/
   end
 
-# ([a-z]+), i.e. www or logger have a puppet_role of www or logger
-elsif Facter.value(:hostname) =~ /^([a-z]+)$/
-  Facter.add('puppet_role') do
-    setcode do
-      $1
-    end
+  setcode { Facter.value(:hostname)[/^([a-z]+)-([a-z]+)[0-9]*$/, 2] }
+end
+
+# ([a-z]+)[0-9]*, i.e. www01 or logger have a puppet_role of www or logger
+Facter.add(:puppet_role) do
+  confine :hostname do |value|
+    value =~ /^([a-z]+)[0-9]*$/
   end
 
-# Set to hostname if no patterns match
-else
-  Facter.add('puppet_role') do
-    setcode do
-      'default'
-    end
-  end
+  setcode { Facter.value(:hostname)[/^([a-z]+)[0-9]*$/, 1] }
+end
+
+# Set to 'default' if no patterns match
+Facter.add(:puppet_role) do
+  setcode { 'default'}
 end
